@@ -1,12 +1,10 @@
 import "@mantine/core/styles.css";
 import "./globals.css";
 
-import { ColorSchemeScript, Flex, MantineProvider } from "@mantine/core";
-import Sidebar from "@/components/sidebar";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 
 export const metadata = {
-  title: "My Mantine app",
-  description: "I have followed setup instructions carefully",
+  title: "Mantine Dashboard",
 };
 
 export default function RootLayout({
@@ -20,13 +18,7 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider>
-          <Flex direction="row" h="100%">
-            <Sidebar />
-
-            <div>{children}</div>
-          </Flex>
-        </MantineProvider>
+        <MantineProvider>{children}</MantineProvider>
       </body>
     </html>
   );

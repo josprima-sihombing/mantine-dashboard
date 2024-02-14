@@ -1,6 +1,6 @@
 "use client";
 
-import { Flex, ScrollArea, Title } from "@mantine/core";
+import { Code, Flex, Group, ScrollArea, Title } from "@mantine/core";
 
 import classes from "./sidebar.module.css";
 import SidebarMenu from "./menu";
@@ -18,36 +18,28 @@ export default function Sidebar() {
       </div>
 
       <ScrollArea h="100%" miw={200}>
-        <SidebarMenu icon={IconCalendarStats} label="Dashboard" />
+        <SidebarMenu icon={IconCalendarStats} label="Dashboard" link="/" />
         <SidebarMenu
           icon={IconUsers}
           label="User Management"
           links={[
             {
               label: "User List",
-              link: "/",
+              link: "/user-management",
             },
             {
-              label: "Revoke Access",
-              link: "/",
-            },
-          ]}
-        />
-        <SidebarMenu
-          icon={IconSettings}
-          label="Settings"
-          links={[
-            {
-              label: "Account Setting",
-              link: "/",
-            },
-            {
-              label: "Account Activity",
-              link: "/",
+              label: "Manage Access",
+              link: "/user-management/access",
             },
           ]}
         />
       </ScrollArea>
+
+      <div className={classes.footer}>
+        <Group>
+          <Code>v0.0.1</Code>
+        </Group>
+      </div>
     </Flex>
   );
 }
